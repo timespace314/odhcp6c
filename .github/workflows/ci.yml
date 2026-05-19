@@ -5,7 +5,7 @@ on:
   push:
 
 env:
-  archs: "aarch64 arm mips mips64 powerpc powerpc64 riscv64 x86_64"
+  archs: "x86_64"
   variants: "without_ubus with_ubus"
 
 jobs:
@@ -16,27 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - arch: aarch64
-            gcc: /usr/bin/aarch64-linux-gnu-gcc
-            packages: gcc-aarch64-linux-gnu
-          - arch: arm
-            gcc: /usr/bin/arm-linux-gnueabi-gcc
-            packages: gcc-arm-linux-gnueabi
-          - arch: mips
-            gcc: /usr/bin/mips-linux-gnu-gcc
-            packages: gcc-mips-linux-gnu
-          - arch: mips64
-            gcc: /usr/bin/mips64-linux-gnuabi64-gcc
-            packages: gcc-mips64-linux-gnuabi64
-          - arch: powerpc
-            gcc: /usr/bin/powerpc-linux-gnu-gcc
-            packages: gcc-powerpc-linux-gnu
-          - arch: powerpc64
-            gcc: /usr/bin/powerpc64-linux-gnu-gcc
-            packages: gcc-powerpc64-linux-gnu
-          - arch: riscv64
-            gcc: /usr/bin/riscv64-linux-gnu-gcc
-            packages: gcc-riscv64-linux-gnu
           - arch: x86_64
             gcc: /usr/bin/x86_64-linux-gnu-gcc
             packages: gcc-x86-64-linux-gnu
@@ -154,20 +133,6 @@ jobs:
     steps:
       - name: Sizes summary
         env:
-          size_aarch64_without_ubus: ${{needs.build.outputs.size-aarch64-without-ubus}}
-          size_aarch64_with_ubus: ${{needs.build.outputs.size-aarch64-with-ubus}}
-          size_arm_without_ubus: ${{needs.build.outputs.size-arm-without-ubus}}
-          size_arm_with_ubus: ${{needs.build.outputs.size-arm-with-ubus}}
-          size_mips_without_ubus: ${{needs.build.outputs.size-mips-without-ubus}}
-          size_mips_with_ubus: ${{needs.build.outputs.size-mips-with-ubus}}
-          size_mips64_without_ubus: ${{needs.build.outputs.size-mips64-without-ubus}}
-          size_mips64_with_ubus: ${{needs.build.outputs.size-mips64-with-ubus}}
-          size_powerpc_without_ubus: ${{needs.build.outputs.size-powerpc-without-ubus}}
-          size_powerpc_with_ubus: ${{needs.build.outputs.size-powerpc-with-ubus}}
-          size_powerpc64_without_ubus: ${{needs.build.outputs.size-powerpc64-without-ubus}}
-          size_powerpc64_with_ubus: ${{needs.build.outputs.size-powerpc64-with-ubus}}
-          size_riscv64_without_ubus: ${{needs.build.outputs.size-riscv64-without-ubus}}
-          size_riscv64_with_ubus: ${{needs.build.outputs.size-riscv64-with-ubus}}
           size_x86_64_without_ubus: ${{needs.build.outputs.size-x86_64-without-ubus}}
           size_x86_64_with_ubus: ${{needs.build.outputs.size-x86_64-with-ubus}}
         run: |
