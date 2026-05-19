@@ -41,20 +41,6 @@ jobs:
             gcc: /usr/bin/x86_64-linux-gnu-gcc
             packages: gcc-x86-64-linux-gnu
     outputs:
-      size-aarch64-without-ubus: ${{ steps.without_ubus.outputs.size_aarch64 }}
-      size-aarch64-with-ubus: ${{ steps.with_ubus.outputs.size_aarch64 }}
-      size-arm-without-ubus: ${{ steps.without_ubus.outputs.size_arm }}
-      size-arm-with-ubus: ${{ steps.with_ubus.outputs.size_arm }}
-      size-mips-without-ubus: ${{ steps.without_ubus.outputs.size_mips }}
-      size-mips-with-ubus: ${{ steps.with_ubus.outputs.size_mips }}
-      size-mips64-without-ubus: ${{ steps.without_ubus.outputs.size_mips64 }}
-      size-mips64-with-ubus: ${{ steps.with_ubus.outputs.size_mips64 }}
-      size-powerpc-without-ubus: ${{ steps.without_ubus.outputs.size_powerpc }}
-      size-powerpc-with-ubus: ${{ steps.with_ubus.outputs.size_powerpc }}
-      size-powerpc64-without-ubus: ${{ steps.without_ubus.outputs.size_powerpc64 }}
-      size-powerpc64-with-ubus: ${{ steps.with_ubus.outputs.size_powerpc64 }}
-      size-riscv64-without-ubus: ${{ steps.without_ubus.outputs.size_riscv64 }}
-      size-riscv64-with-ubus: ${{ steps.with_ubus.outputs.size_riscv64 }}
       size-x86_64-without-ubus: ${{ steps.without_ubus.outputs.size_x86_64 }}
       size-x86_64-with-ubus: ${{ steps.with_ubus.outputs.size_x86_64 }}
     steps:
